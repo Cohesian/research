@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build and local state
+.cache/
+dist/
+build/
+*.egg-info/
+outputs/
+tmp/
+temp/
+
+# Local storage overrides and credentials
+storage/storage.local.toml
+storage/google-drive/routes.local.toml
+.env

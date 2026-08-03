@@ -1,0 +1,16 @@
+version = 1
+
+[content]
+formats = ["md", "ipynb"]
+default_source = "local"
+
+[sources.local]
+kind = "directory"
+enabled = true
+root = "local"
+routes = "local/routes.toml"
+
+[sources.google-drive]
+kind = "remote"
+enabled = false
+routes = "google-drive/routes.toml"
