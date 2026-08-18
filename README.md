@@ -44,8 +44,8 @@ requiring Research-specific bridge code.
 
 Research is contributor-ready now: its id is `research`, its domain is
 `documents`, and its 25 local `md`/`ipynb` resources match K's accepted
-registry. GitHub and Google Drive stores are declared but remain disabled until
-their repositories and maps are published.
+registry. GitHub exposes the same versioned corpus as an active remote store.
+Google Drive remains a disabled private backup.
 
 ## License
 

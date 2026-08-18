@@ -67,10 +67,10 @@ legacy source used by existing consumers during the transition.
 
 ## GitHub
 
-The GitHub template reuses `documents/local/routes.toml` because the future
-Research repository will preserve the same
-`storage/documents/local/<path>.<format>` layout. It is declared but disabled
-until `Cohesian/research` is published.
+The GitHub template reuses `documents/local/routes.toml` because the Research
+repository preserves the same
+`storage/documents/local/<path>.<format>` layout. The active remote is the
+public `Cohesian/research` repository.
 
 ## Documents / Google Drive
 
