@@ -26,5 +26,5 @@ temp/
 
 # Local storage overrides and credentials
 storage/storage.local.toml
-storage/google-drive/routes.local.toml
+storage/documents/google-drive/routes.local.toml
 .env

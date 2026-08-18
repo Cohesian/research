@@ -16,24 +16,26 @@ canonical TLF and contributor contracts in [`../../k-graph/`](../../k-graph/).
 | Workspace overview | [`README.md`](README.md) |
 | Research and K | [`docs/README.md`](docs/README.md) |
 | Storage ownership | [`storage/README.md`](storage/README.md) |
-| Storage interface | [`tooling/README.md`](tooling/README.md) |
+| Contributor protocol | [`contributor.toml`](contributor.toml) |
+| Common URI contract | [`../../../Organization/CONTRIBUTOR-STORE-RESOLUTION.md`](../../../Organization/CONTRIBUTOR-STORE-RESOLUTION.md) |
+| Tether bridge | [`../tether/README.md`](../tether/README.md) |
 | Canonical TLF | [`../../k-graph/docs/TLF.md`](../../k-graph/docs/TLF.md) |
 | Contributor contract | [`../../k-graph/docs/CONTRIBUTORS.md`](../../k-graph/docs/CONTRIBUTORS.md) |
 
 ## Working model
 
-Research content lives under `storage/local/` at its rooted K path:
+Research content lives under `storage/documents/local/` at its rooted K path:
 
 ```text
-storage/local/<rooted-path>.<format>
+storage/documents/local/<rooted-path>.<format>
 ```
 
 Every stored object is addressed by K's immutable UUID, its current rooted
-path, or both. `storage/local/routes.toml` binds those selectors to local
+path, or both. `storage/documents/local/routes.toml` binds those selectors to local
 files. Google Drive locations will use the same identity pair in
-`storage/google-drive/routes.toml` after that layout is chosen. The source
-registry is `storage/storage.toml`; credentials remain in the owning
-environment.
+`storage/documents/google-drive/routes.toml`. Domains,
+stores, and their many-to-many bindings are declared in `contributor.toml`;
+credentials remain in the owning environment.
 
 There is no repository-wide writing template yet. Let the question, intended
 reader, and task instructions determine the form of each paper.
@@ -43,9 +45,10 @@ reader, and task instructions determine the form of each paper.
 From the repository root:
 
 ```bash
-PYTHONPATH=tooling PYTHONDONTWRITEBYTECODE=1 \
-  python -m unittest discover -s tooling/tests
-PYTHONPATH=tooling PYTHONDONTWRITEBYTECODE=1 \
-  python -m research_storage.cli storages
+PYTHONPATH=../tether PYTHONDONTWRITEBYTECODE=1 \
+  python -m tether.cli contributor check .
+PYTHONPATH=../tether PYTHONDONTWRITEBYTECODE=1 \
+  python -m tether.cli resource list . \
+    --domain documents
 git diff --check
 ```

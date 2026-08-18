@@ -16,10 +16,18 @@ The canonical contracts live in [`Cohesian/k-graph`](../../../k-graph/):
 - [`docs/PROPOSALS.md`](../../../k-graph/docs/PROPOSALS.md)
 
 K owns accepted knowledge identity and topology. Research owns its papers,
-notebooks, replicas, and retrieval interface. Each accepted K node has two
+notebooks, replicas, and contributor protocol. Each accepted K node has two
 selectors: an immutable UUID and a rooted path that may change when grouping
-topology changes. Research records both, so callers can resolve content by
-either selector and detect stale path mappings across replicas.
+topology changes. Research records both, so Tether can discover
+content by either selector.
 
-Storage is described in [`../storage/README.md`](../storage/README.md), and the
-query interface in [`../tooling/README.md`](../tooling/README.md).
+Within Research, `documents` is the contributor domain. One Research resource
+is uniquely identified by `(K node, research, documents, format)`. It has no
+separate resource name: `md` and `ipynb` are distinct format leaves, while a
+second store represents a replica rather than another paper.
+
+Storage is described in [`../storage/README.md`](../storage/README.md). The
+localized bridge is [`../contributor.toml`](../contributor.toml); its common
+protocol is implemented by [Tether](../../tether/).
+The contributor identity and resource-registration steps are summarized in
+[Tether's onboarding guide](../../tether/docs/CONTRIBUTOR-ONBOARDING.md).

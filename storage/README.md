@@ -1,32 +1,46 @@
 # Research storage
 
-Research owns the persistence and retrieval of the papers and notebooks it
-produces.
+Research owns the persistence, inventory, and availability declarations of the
+papers and notebooks it produces.
 
 ```text
 storage/
-├── local/
-│   ├── routes.toml         # K identity to local-file map
-│   └── T-*/...             # versioned research corpus
-├── google-drive/
-│   └── routes.toml         # future Drive locations and replica metadata
-└── storage.toml            # source registry
+└── documents/
+    ├── local/
+    │   ├── routes.toml     # K identity to local-file map
+    │   └── T-*/...         # versioned research corpus
+    └── google-drive/
+        └── routes.toml     # Drive locations and replica metadata
 ```
 
-## Local
+The root [`contributor.toml`](../contributor.toml) declares Research's domains
+and stores independently, then binds them through explicit `[[bindings]]`.
 
-[`local/`](local/) mirrors K rooted paths. A content path omits the extension:
+The first level partitions Research-owned domains. Inside a domain, each
+directory expresses one persistence alternative for the same logical
+resources.
+
+## Documents / local
+
+[`documents/local/`](documents/local/) mirrors K rooted paths. A content path
+omits the extension:
 
 ```text
 T-math/L-division/F-01-introduction
 ```
 
-[`local/routes.toml`](local/routes.toml) binds each immutable K UUID and rooted
-path to a file location. Research can therefore resolve either selector to:
+[`documents/local/routes.toml`](documents/local/routes.toml) binds each
+immutable K UUID and rooted path to a file location. Research can therefore
+expose either selector with a local store descriptor. Tether then projects it
+to:
 
 ```text
-storage/local/T-math/L-division/F-01-introduction.md
+storage/documents/local/T-math/L-division/F-01-introduction.md
 ```
+
+The logical Research resource is `(node, research, documents, md)`. The local
+path above is only one replica location. The same resource may later map to a
+Drive URI without changing its identity.
 
 A local route is explicit even when `path` and `location` currently match:
 
@@ -39,21 +53,31 @@ location = "T-math/L-division/F-01-introduction.md"
 ```
 
 The UUID remains stable if K later moves the node. Updating the rooted path in
-this map preserves ID-based retrieval, while storage audits can reveal a stale
-path on another replica. Identity stays in the route map rather than document
-front matter, so the same resolver works for Markdown, notebooks, Drive files,
-and future formats without rewriting their content bodies.
+this map preserves ID-based discovery. Identity stays in the route map rather
+than document front matter, so the same contributor protocol works for
+Markdown, notebooks, Drive files, and future formats without rewriting their
+content bodies.
+
+The local binding uses `pattern = "{path}.{format}"`, so it mirrors K's current
+grouping path. That is a Research storage decision, not a protocol
+requirement. Another contributor may use `{id}.{format}` or an explicit map.
 
 The current corpus was copied from Foundations. Foundations remains the stable
 legacy source used by existing consumers during the transition.
 
-## Google Drive
+## GitHub
 
-[`google-drive/routes.toml`](google-drive/routes.toml) is intentionally empty.
-When the Drive layout is settled, each route can record the same K UUID and
-rooted path, plus its format, URI, modification time, and checksum. The CLI can
-then compare local and Drive replicas without placing credentials in this
-repository.
+The GitHub template reuses `documents/local/routes.toml` because the future
+Research repository will preserve the same
+`storage/documents/local/<path>.<format>` layout. It is declared but disabled
+until `Cohesian/research` is published.
+
+## Documents / Google Drive
+
+[`documents/google-drive/routes.toml`](documents/google-drive/routes.toml)
+records the same K UUID, rooted path, and format as the local inventory, plus
+the provider-controlled URI. No credentials belong in the protocol or
+inventory.
 
 The future entry shape is deliberately small:
 
@@ -67,8 +91,9 @@ modified_at = "2026-08-03T12:00:00Z"
 sha256 = "..."
 ```
 
-After routes exist, `sources.google-drive.enabled` in `storage.toml` activates
-them for discovery, resolution, and replica comparison.
+After routes exist, `stores.google-drive.enabled` in `contributor.toml`
+activates them for discovery. Its `map` strategy lets Tether
+interpret Drive-controlled URIs.
 
-The storage-query interface is documented in
-[`../tooling/README.md`](../tooling/README.md).
+The common query interface is documented in
+[Tether's README](../../tether/README.md).

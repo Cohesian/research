@@ -1,0 +1,44 @@
+version = 1
+
+[contributor]
+id = "research"
+
+[domains.documents]
+formats = ["md", "ipynb"]
+
+[stores.local]
+kind = "directory"
+enabled = true
+strategy = "template"
+origin = "storage/documents/local"
+
+[stores.github]
+kind = "remote"
+enabled = false
+strategy = "template"
+origin = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local"
+
+[stores.google-drive]
+kind = "remote"
+enabled = false
+strategy = "map"
+
+[[bindings]]
+domain = "documents"
+store = "local"
+formats = ["md", "ipynb"]
+inventory = "storage/documents/local/routes.toml"
+pattern = "{path}.{format}"
+
+[[bindings]]
+domain = "documents"
+store = "github"
+formats = ["md", "ipynb"]
+inventory = "storage/documents/local/routes.toml"
+pattern = "{path}.{format}"
+
+[[bindings]]
+domain = "documents"
+store = "google-drive"
+formats = ["md", "ipynb"]
+inventory = "storage/documents/google-drive/routes.toml"
