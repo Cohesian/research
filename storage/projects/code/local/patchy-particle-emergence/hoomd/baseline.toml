@@ -1,0 +1,38 @@
+[simulation]
+seed = 41
+dt = 0.002
+steps = 100000
+write_period = 250
+temperature = 0.35
+linear_drag = 1.0
+angular_drag = 0.5
+
+[geometry]
+box_length = 20.0
+wall_half_extent = 9.0
+particle_radius = 0.5
+particle_mass = 1.0
+minimum_initial_distance = 1.08
+
+[initialization]
+method = "uniform_rejection"
+candidate_pool = 1
+
+[population]
+P1 = 16
+P2 = 32
+P3 = 48
+
+[interaction]
+repulsion_energy = 1.0
+patch_attraction = 4.0
+patch_range = 1.0
+patch_cutoff = 1.8
+patch_half_angle = 0.38
+patch_steepness = 30.0
+
+[analysis]
+contact_cutoff = 1.45
+minimum_patch_alignment = 0.90
+orientational_order = 2
+

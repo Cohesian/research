@@ -1,0 +1,33 @@
+[workspace]
+name = "cohesian-emergence-hoomd"
+version = "0.1.0"
+description = "HOOMD-blue benchmark for Cohesian's emergence experiments."
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64"]
+
+[dependencies]
+python = "3.12.*"
+hoomd = ">=7.1,<8"
+gsd = ">=4.2,<5"
+matplotlib = ">=3.9,<4"
+numpy = ">=2.0,<3"
+pytest = ">=8.3,<10"
+nbclient = ">=0.10,<1"
+nbformat = ">=5.10,<6"
+jupyterlab = ">=4.4,<5"
+pandas = ">=2.2,<3"
+nbconvert = ">=7.16,<8"
+
+[tasks]
+simulate = "python simulate.py --config experiment.toml"
+analyze = "python analyze.py --config experiment.toml --trajectory outputs/trajectory.gsd"
+render = "python render.py --config experiment.toml --trajectory outputs/trajectory.gsd"
+experiment = { depends-on = ["simulate", "analyze", "render"] }
+baseline = "python simulate.py --config baseline.toml --output outputs/baseline && python analyze.py --config baseline.toml --trajectory outputs/baseline/trajectory.gsd --output outputs/baseline && python render.py --config baseline.toml --trajectory outputs/baseline/trajectory.gsd --output outputs/baseline"
+study = "python study.py --study study.toml --output outputs/study"
+notebook-build = "python build_notebook.py"
+notebook-execute = "jupyter nbconvert --execute --to notebook --inplace notebooks/02-controlled-emergence-study.ipynb --ExecutePreprocessor.timeout=600"
+notebook-publish = "python publish_study.py"
+video = "python animate.py --config outputs/study/blue-noise--selective/seed-0041/resolved.toml --trajectory outputs/study/blue-noise--selective/seed-0041/trajectory.gsd --output ../../../../media/local/patchy-particle-emergence/emergence.mp4"
+smoke = "python simulate.py --config experiment.toml --steps 1000 --write-period 100 --output outputs/smoke && python analyze.py --config experiment.toml --trajectory outputs/smoke/trajectory.gsd --output outputs/smoke && python render.py --config experiment.toml --trajectory outputs/smoke/trajectory.gsd --output outputs/smoke"
+test = "pytest -q tests"

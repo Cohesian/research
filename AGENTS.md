@@ -24,11 +24,16 @@ canonical TLF and contributor contracts in [`../../k-graph/`](../../k-graph/).
 
 ## Working model
 
-Research content lives under `storage/documents/local/` at its rooted K path:
+Research documents live under `storage/documents/local/` at their rooted K
+paths:
 
 ```text
 storage/documents/local/<rooted-path>.<format>
 ```
+
+A `documents/companions` resource is a directory at `<rooted-path>` containing
+the files referenced by the corresponding document. It shares the K node's
+identity but remains distinct from its `md` and `ipynb` resources.
 
 Every stored object is addressed by K's immutable UUID, its current rooted
 path, or both. `storage/documents/local/routes.toml` binds those selectors to local
@@ -36,6 +41,11 @@ files. Google Drive locations will use the same identity pair in
 `storage/documents/google-drive/routes.toml`. Domains,
 stores, and their many-to-many bindings are declared in `contributor.toml`;
 credentials remain in the owning environment.
+
+Executable studies and rendered research media live under
+`storage/projects/`. `projects` is a storage grouping, not a contributor
+domain. Their K resource domains are `code` and `media`; the authoritative
+selectors remain the same UUID and rooted path used by the documents.
 
 There is no repository-wide writing template yet. Let the question, intended
 reader, and task instructions determine the form of each paper.

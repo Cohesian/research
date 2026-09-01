@@ -17,6 +17,7 @@ Thumbs.db
 
 # Build and local state
 .cache/
+.pixi/
 dist/
 build/
 *.egg-info/
@@ -27,4 +28,5 @@ temp/
 # Local storage overrides and credentials
 storage/storage.local.toml
 storage/documents/google-drive/routes.local.toml
+storage/projects/media/local/**/*.mp4
 .env

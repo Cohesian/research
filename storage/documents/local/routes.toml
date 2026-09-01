@@ -149,3 +149,45 @@ id = "07ff1a0b-e84f-40bb-996f-467a03d2bf3c"
 path = "T-math/T-linear-algebra/T-vectors/L-reflection/F-01-introduction"
 format = "md"
 location = "T-math/T-linear-algebra/T-vectors/L-reflection/F-01-introduction.md"
+
+[[route]]
+id = "440e4d3d-ea9f-4915-97e6-2b6b7c09c6c4"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-00-purpose-and-boundary"
+format = "md"
+location = "T-physics/L-emergence/L-patchy-particle-emergence/F-00-purpose-and-boundary.md"
+
+[[route]]
+id = "579fa81e-4a5a-4521-98d9-ea8b69a48e8d"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-01-microscopic-model"
+format = "md"
+location = "T-physics/L-emergence/L-patchy-particle-emergence/F-01-microscopic-model.md"
+
+[[route]]
+id = "65cecd50-0570-42ca-bf41-6b5ad967a0cf"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-02-local-rules-and-parameters"
+format = "md"
+location = "T-physics/L-emergence/L-patchy-particle-emergence/F-02-local-rules-and-parameters.md"
+
+[[route]]
+id = "d01f2da8-c079-4665-b0cf-cd78f5c9727e"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-03-macroscopic-observables"
+format = "md"
+location = "T-physics/L-emergence/L-patchy-particle-emergence/F-03-macroscopic-observables.md"
+
+[[route]]
+id = "6281d965-093e-4aaa-9ce0-2f67b95c8bbc"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-04-experimental-laboratory"
+format = "md"
+location = "T-physics/L-emergence/L-patchy-particle-emergence/F-04-experimental-laboratory.md"
+
+[[route]]
+id = "6281d965-093e-4aaa-9ce0-2f67b95c8bbc"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-04-experimental-laboratory"
+format = "ipynb"
+location = "T-physics/L-emergence/L-patchy-particle-emergence/F-04-experimental-laboratory.ipynb"
+
+[[route]]
+id = "508419e1-a1ea-4863-82b7-3636e39e5ee4"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-05-findings-and-limitations"
+format = "md"
+location = "T-physics/L-emergence/L-patchy-particle-emergence/F-05-findings-and-limitations.md"

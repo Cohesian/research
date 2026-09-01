@@ -1,0 +1,7 @@
+version = 1
+
+[[route]]
+id = "6281d965-093e-4aaa-9ce0-2f67b95c8bbc"
+path = "T-physics/L-emergence/L-patchy-particle-emergence/F-04-experimental-laboratory"
+format = "python-project"
+location = "patchy-particle-emergence/hoomd"

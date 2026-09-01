@@ -1,0 +1,24 @@
+[study]
+base_config = "study-base.toml"
+seeds = [41, 137, 251]
+tail_fraction = 0.25
+persistence_threshold = 0.10
+
+[initializations.random]
+method = "uniform_rejection"
+candidate_pool = 1
+
+[initializations.blue-noise]
+method = "blue_noise"
+candidate_pool = 96
+
+[chemistries.uniform]
+
+[chemistries.selective.pairs]
+P1-P1 = 0.20
+P1-P2 = 3.50
+P1-P3 = 4.00
+P2-P2 = 4.00
+P2-P3 = 5.00
+P3-P3 = 1.50
+

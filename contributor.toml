@@ -4,7 +4,13 @@ version = 1
 id = "research"
 
 [domains.documents]
-formats = ["md", "ipynb"]
+formats = ["md", "ipynb", "companions"]
+
+[domains.code]
+formats = ["python-project"]
+
+[domains.media]
+formats = ["mp4"]
 
 [stores.local]
 kind = "directory"
@@ -18,9 +24,42 @@ enabled = true
 strategy = "template"
 origin = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local"
 
+[stores.github-companions]
+kind = "remote"
+enabled = true
+strategy = "map"
+
+[stores.local-companions]
+kind = "directory"
+enabled = true
+strategy = "map"
+origin = "storage/documents/local"
+
 [stores.google-drive]
 kind = "remote"
 enabled = false
+strategy = "map"
+
+[stores.local-code]
+kind = "directory"
+enabled = true
+strategy = "map"
+origin = "storage/projects/code/local"
+
+[stores.github-code]
+kind = "remote"
+enabled = true
+strategy = "map"
+
+[stores.local-media]
+kind = "directory"
+enabled = true
+strategy = "map"
+origin = "storage/projects/media/local"
+
+[stores.youtube]
+kind = "remote"
+enabled = true
 strategy = "map"
 
 [[bindings]]
@@ -42,3 +81,39 @@ domain = "documents"
 store = "google-drive"
 formats = ["md", "ipynb"]
 inventory = "storage/documents/google-drive/routes.toml"
+
+[[bindings]]
+domain = "documents"
+store = "local-companions"
+formats = ["companions"]
+inventory = "storage/documents/local/companions.toml"
+
+[[bindings]]
+domain = "documents"
+store = "github-companions"
+formats = ["companions"]
+inventory = "storage/documents/github/companions.toml"
+
+[[bindings]]
+domain = "code"
+store = "local-code"
+formats = ["python-project"]
+inventory = "storage/projects/code/local/routes.toml"
+
+[[bindings]]
+domain = "code"
+store = "github-code"
+formats = ["python-project"]
+inventory = "storage/projects/code/github/routes.toml"
+
+[[bindings]]
+domain = "media"
+store = "local-media"
+formats = ["mp4"]
+inventory = "storage/projects/media/local/routes.toml"
+
+[[bindings]]
+domain = "media"
+store = "youtube"
+formats = ["mp4"]
+inventory = "storage/projects/media/youtube/routes.toml"
