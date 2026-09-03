@@ -2,12 +2,12 @@
 
 ## Purpose
 
-Act as a Research collaborator. Develop shallow or mature ideas into papers,
-notebooks, explanations, derivations, and supporting research sources.
+Act as a Research collaborator. Develop ideas into papers, notebooks,
+executable studies, explanations, derivations, and scientific media.
 
-Research work may begin independently or from an existing K node. When the
-result is proposed to K, shape the proposed graph change according to the
-canonical TLF and contributor contracts in [`../../k-graph/`](../../k-graph/).
+Research work may begin independently or from an existing K node. When it is
+proposed to K, express the topology and resource overlay according to the
+canonical contracts in [`../k-graph/`](../k-graph/).
 
 ## Read first
 
@@ -16,39 +16,46 @@ canonical TLF and contributor contracts in [`../../k-graph/`](../../k-graph/).
 | Workspace overview | [`README.md`](README.md) |
 | Research and K | [`docs/README.md`](docs/README.md) |
 | Storage ownership | [`storage/README.md`](storage/README.md) |
-| Contributor protocol | [`contributor.toml`](contributor.toml) |
-| Common URI contract | [`../../../Organization/CONTRIBUTOR-STORE-RESOLUTION.md`](../../../Organization/CONTRIBUTOR-STORE-RESOLUTION.md) |
-| Tether bridge | [`../tether/README.md`](../tether/README.md) |
-| Canonical TLF | [`../../k-graph/docs/TLF.md`](../../k-graph/docs/TLF.md) |
-| Contributor contract | [`../../k-graph/docs/CONTRIBUTORS.md`](../../k-graph/docs/CONTRIBUTORS.md) |
+| Contributor package | [`contributor.toml`](contributor.toml) |
+| Resource contract v2 | [`../k-graph/docs/RESOURCE-CONTRACT-V2.md`](../k-graph/docs/RESOURCE-CONTRACT-V2.md) |
+| Tether protocol v2 | [`../tether/docs/CONTRIBUTOR-PROTOCOL-V2.md`](../tether/docs/CONTRIBUTOR-PROTOCOL-V2.md) |
+| Canonical TLF | [`../k-graph/docs/TLF.md`](../k-graph/docs/TLF.md) |
 
 ## Working model
 
-Research documents live under `storage/documents/local/` at their rooted K
-paths:
+Research owns three active hierarchy inventories:
 
 ```text
-storage/documents/local/<rooted-path>.<format>
+documents
+code
+media
 ```
 
-A `documents/companions` resource is a directory at `<rooted-path>` containing
-the files referenced by the corresponding document. It shares the K node's
-identity but remains distinct from its `md` and `ipynb` resources.
+Each inventory record binds a K node UUID, an optional current rooted path,
+and a local resource key to one versioned protocol and canonical SHA-256. Its
+`locations` list describes the exact replicas or publications Research
+currently exposes.
 
-Every stored object is addressed by K's immutable UUID, its current rooted
-path, or both. `storage/documents/local/routes.toml` binds those selectors to local
-files. Google Drive locations will use the same identity pair in
-`storage/documents/google-drive/routes.toml`. Domains,
-stores, and their many-to-many bindings are declared in `contributor.toml`;
-credentials remain in the owning environment.
+Use `markdown-bundle@1` when a Markdown entrypoint has a same-stem companion
+directory. Use `markdown-file@1` when the Markdown file is the complete
+resource. Notebooks, MP4 files, and Python projects use their corresponding
+protocols from Tether's registry.
 
-Executable studies and rendered research media live under
-`storage/projects/`. `projects` is a storage grouping, not a contributor
-domain. Their K resource domains are `code` and `media`; the authoritative
-selectors remain the same UUID and rooted path used by the documents.
+Studio is a production workstation. When it produces accepted scientific
+media or a Loci project for Research, Research stores and registers that
+resource; `produced_by = "studio"` records provenance when useful.
 
-There is no repository-wide writing template yet. Let the question, intended
-reader, and task instructions determine the form of each paper.
+## Updating a resource
+
+After changing resource bytes, recalculate the digest with Tether and update
+the matching `resources.toml` record. The same protocol and digest are later
+copied into K's accepted overlay.
+
+```bash
+PYTHONPATH=../tether python -m tether.cli resource digest \
+  storage/documents/local/path/to/paper.md \
+  --protocol markdown-file@1
+```
 
 ## Validation
 
@@ -58,7 +65,6 @@ From the repository root:
 PYTHONPATH=../tether PYTHONDONTWRITEBYTECODE=1 \
   python -m tether.cli contributor check .
 PYTHONPATH=../tether PYTHONDONTWRITEBYTECODE=1 \
-  python -m tether.cli resource list . \
-    --domain documents
+  python -m tether.cli resource list . --hierarchy documents
 git diff --check
 ```

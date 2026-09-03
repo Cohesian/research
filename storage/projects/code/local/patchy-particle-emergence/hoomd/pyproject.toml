@@ -1,0 +1,9 @@
+[project]
+name = "cohesian-emergence-hoomd"
+version = "0.1.0"
+description = "HOOMD-blue experiment for Cohesian's patchy-particle emergence study"
+requires-python = ">=3.12"
+
+# Pixi owns the executable environment because HOOMD-blue is installed from
+# conda-forge. This file supplies portable Python project identity; pixi.toml
+# remains the authoritative dependency and task declaration.

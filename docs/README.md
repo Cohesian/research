@@ -1,38 +1,41 @@
 # Research workspace
 
-Research develops ideas into academic papers, notebooks, and related content.
-An idea may come from a person, from K, or from work already happening inside
-Research.
+Research develops scientific content. A result may be one paper, a notebook,
+a small TLF subgraph, an executable experiment, a video, or a composition of
+several of those resources.
 
-Research can produce one File, several Files, a Lecture-sized collection, or a
-small Topic-shaped collection. A study may combine prose, a notebook, an
-executable project, and rendered media. The research process itself is
-independent of K. When Research wants that work represented in the accepted
-graph, it prepares a proposal matching K's TLF and resource domains.
+The research process is independent of K. Registration begins only when a
+result is proposed for the accepted graph.
 
-The canonical contracts live in [`Cohesian/k-graph`](../../../k-graph/):
+## Boundary with K
 
-- [`docs/TLF.md`](../../../k-graph/docs/TLF.md)
-- [`docs/CONTRIBUTORS.md`](../../../k-graph/docs/CONTRIBUTORS.md)
-- [`docs/PROPOSALS.md`](../../../k-graph/docs/PROPOSALS.md)
+K owns accepted node identity and topology. Research owns resource bytes,
+replicas, and publications. Their stable join is
 
-K owns accepted knowledge identity and topology. Research owns its papers,
-notebooks, replicas, and contributor protocol. Each accepted K node has two
-selectors: an immutable UUID and a rooted path that may change when grouping
-topology changes. Research records both, so Tether can discover
-content by either selector.
+$$
+(\operatorname{id}(v),\,c,\,H,\,p)
+\longmapsto (q,z),
+$$
 
-Research exposes three contributor domains: `documents`, `code`, and `media`.
-One Research resource is uniquely identified by
-`(K node, research, domain, format)`. It has no separate resource name:
-`md`, `ipynb`, `companions`, `python-project`, and `mp4` are distinct resource
-leaves, while a second store represents a replica rather than another
-resource. A `companions` leaf is a directory bundle for files referenced by a
-document; it is not another paper and does not require identities for each
-contained file.
+where $c=\text{research}$, $H$ is the hierarchy, $p$ is the resource key,
+$q$ is its protocol, and $z$ is the protocol-defined SHA-256.
 
-Storage is described in [`../storage/README.md`](../storage/README.md). The
-localized bridge is [`../contributor.toml`](../contributor.toml); its common
-protocol is implemented by [Tether](../../tether/).
-The contributor identity and resource-registration steps are summarized in
-[Tether's onboarding guide](../../tether/docs/CONTRIBUTOR-ONBOARDING.md).
+The rooted K path is retained as a readable, checked selector. It may change
+after a grouping rewrite; the node UUID and resource address remain stable.
+
+Research's active hierarchies are `documents`, `code`, and `media`. Resource
+protocols describe the boundary independently from file extension:
+
+- `markdown-file@1` is one Markdown file;
+- `markdown-bundle@1` is a Markdown entrypoint plus its same-stem assets;
+- `jupyter-notebook-file@1` is one notebook source;
+- `python-project@1` is a bounded reproducible project; and
+- `mp4-file@1` is one exact video file.
+
+Studio can be used to produce future media without becoming its owner in K.
+After delivery, Research stores the source project and/or video, computes their
+digests, and records Studio only as optional provenance.
+
+The canonical specifications live in
+[`Cohesian/k-graph`](../../k-graph/docs/RESOURCE-CONTRACT-V2.md) and
+[`Cohesian/tether`](../../tether/docs/CONTRIBUTOR-PROTOCOL-V2.md).

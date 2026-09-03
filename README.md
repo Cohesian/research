@@ -1,58 +1,69 @@
 # Cohesian Research
 
-Research is Cohesian's workspace for developing ideas into papers, notebooks,
-executable studies, and related academic content.
-
-It may work independently or prepare TLF-compatible proposals for K. Research
-owns the content it produces, the storage replicas it maintains, and the
-declarations needed to discover those replicas.
+Research is Cohesian's workspace and contributor for papers, notebooks,
+executable studies, and scientific media. It may develop work independently;
+accepted resources are attached to K nodes through the contributor contract.
 
 ## Start here
 
 | Need | Read |
 |---|---|
 | Research role | [`AGENTS.md`](AGENTS.md) |
-| Workspace and K relationship | [`docs/README.md`](docs/README.md) |
-| Storage layout | [`storage/README.md`](storage/README.md) |
-| Contributor protocol | [`contributor.toml`](contributor.toml) |
-| Tether bridge | [`../tether/README.md`](../tether/README.md) |
+| Relationship with K | [`docs/README.md`](docs/README.md) |
+| Resource persistence | [`storage/README.md`](storage/README.md) |
+| Machine-readable package | [`contributor.toml`](contributor.toml) |
+| Shared bridge | [`../tether/README.md`](../tether/README.md) |
+
+## Resource model
+
+Research implements contributor protocol v2. One resource address is
+
+$$
+(\operatorname{id}(v),\,\text{research},\,H,\,p),
+$$
+
+where $H$ is an arbitrary hierarchy and $p$ is a resource key local to that
+K node and hierarchy. The current inventories are:
+
+- `documents`: Markdown files, Markdown bundles, and Jupyter notebooks;
+- `code`: reproducible source projects; and
+- `media`: rendered scientific media.
+
+Every resource declares its protocol, canonical SHA-256, and its own available
+locations. Research owns those bytes and locations. K owns accepted identity,
+topology, protocol, and digest. Tether validates and joins both descriptions.
+
+Studio may produce a resource on Research's behalf. Such a record remains
+owned by `research` and may carry `produced_by = "studio"` as provenance; that
+field does not alter its logical address.
 
 ## Repository shape
 
 ```text
 research/
-├── contributor.toml       # domains, stores, and their bindings
-├── docs/                   # Research workspace documentation
+├── contributor.toml
+├── docs/
 ├── storage/
-│   ├── documents/          # papers and notebooks
-│   │   ├── local/          # corpus plus its identity route map
-│   │   └── google-drive/   # Drive route inventory
-│   └── projects/           # storage grouping for executable studies
-│       ├── code/           # reproducible project sources
-│       └── media/          # rendered research media
+│   ├── documents/
+│   │   ├── resources.toml
+│   │   └── local/
+│   └── projects/
+│       ├── code/resources.toml
+│       └── media/resources.toml
 ├── README.md
 └── AGENTS.md
 ```
 
-The `documents`, `code`, and `media` domains contain distinct resource formats.
-`documents/companions` represents one directory of document-owned supporting
-files, allowing a paper and its figures to be materialized independently but
-rejoined by their common K selector.
-The local document corpus preserves K rooted paths, while explicit maps bind
-project code and rendered media to the same canonical K selectors.
-Foundations remains unchanged while existing consumers migrate.
+The older `routes.toml` files remain as transition references for protocol v1.
+`contributor.toml` and the three `resources.toml` inventories are the active v2
+package.
 
-Research proposals to K and storage discovery are separate operations: K may
-accept a research contribution, while Research remains responsible for making
-the corresponding content available. The root contributor protocol exposes
-Research's domains, stores, bindings, and inventories to Tether without
-requiring Research-specific bridge code.
+## Validation
 
-Research is contributor-ready now: its id is `research`, and its active local
-inventories cover documents, executable code, and rendered media. GitHub
-exposes the versioned document and code resources. Google Drive remains a
-disabled private document backup, and YouTube remains disabled until the
-Physics video URI is published.
+```bash
+PYTHONPATH=../tether python -m tether.cli contributor check .
+PYTHONPATH=../tether python -m tether.cli resource list .
+```
 
 ## License
 
