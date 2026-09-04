@@ -32,9 +32,10 @@ protocols describe the boundary independently from file extension:
 - `python-project@1` is a bounded reproducible project; and
 - `mp4-file@1` is one exact video file.
 
-Studio can be used to produce future media without becoming its owner in K.
-After delivery, Research stores the source project and/or video, computes their
-digests, and records Studio only as optional provenance.
+Studio produces media without becoming its owner in K. After delivery,
+Research stores the source project and/or video, computes their digests, and
+records Studio only as optional provenance. The current binder scene projects
+and videos follow this flow.
 
 The canonical specifications live in
 [`Cohesian/k-graph`](../../k-graph/docs/RESOURCE-CONTRACT-V2.md) and

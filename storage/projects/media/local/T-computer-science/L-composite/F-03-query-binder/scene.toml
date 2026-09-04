@@ -1,0 +1,28 @@
+version = 1
+
+[scene]
+id = "371342c0-401f-4d34-a537-439386bf9f7c"
+path = "T-computer-science/L-composite/F-03-query-binder"
+format = "loci-project"
+entrypoint = "scenes/scene.py"
+class = "QueryBinder"
+
+[source]
+workspace = "videos/scenes/k_graph/T-computer-science/L-composite/F-03-query-binder.py"
+loci_commit = "e25c0b3782b62e4b4d46ead79996b7c60feb56e2"
+loci_plugins_commit = "b1c5c38eaf7d3a633f4c7fa500009b0121f900ac"
+local_dependencies = ["scenes/_voiceover.py"]
+
+[master]
+accepted = "2026-08-20"
+file = "storage/k-graph/videos/local/T-computer-science/L-composite/F-03-query-binder.mp4"
+width = 1920
+height = 1080
+fps = 30
+duration_seconds = 61.700000
+video_codec = "h264"
+audio_codec = "aac"
+speech_service = "openai"
+voice = "alloy"
+speech_model = "tts-1-hd"
+sha256 = "a4f76cac042ea194965181e08b4943f96d0338106c19964c6ebb714d6eda7bbb"

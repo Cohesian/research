@@ -1,0 +1,28 @@
+version = 1
+
+[scene]
+id = "2a05068f-d48c-4fdd-915c-778bc8f42211"
+path = "T-computer-science/L-composite/F-01-carbon-binder"
+format = "loci-project"
+entrypoint = "scenes/scene.py"
+class = "CarbonBinder"
+
+[source]
+workspace = "videos/scenes/k_graph/T-computer-science/L-composite/F-01-carbon-binder.py"
+loci_commit = "e25c0b3782b62e4b4d46ead79996b7c60feb56e2"
+loci_plugins_commit = "b1c5c38eaf7d3a633f4c7fa500009b0121f900ac"
+local_dependencies = ["scenes/_voiceover.py"]
+
+[master]
+accepted = "2026-08-20"
+file = "storage/k-graph/videos/local/T-computer-science/L-composite/F-01-carbon-binder.mp4"
+width = 1920
+height = 1080
+fps = 30
+duration_seconds = 56.933333
+video_codec = "h264"
+audio_codec = "aac"
+speech_service = "openai"
+voice = "alloy"
+speech_model = "tts-1-hd"
+sha256 = "71a89456adec6f26dda3282f93382076de615e36e276f53ed169d74e28d8ddb0"

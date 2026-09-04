@@ -63,9 +63,16 @@ The HOOMD study is a `python-project@1` resource. Its Pixi environment and
 runtime outputs are outside the canonical project boundary; `pixi.toml` and
 `pixi.lock` preserve the executable environment declaration.
 
-The rendered emergence video is exact in local storage and a publication on
-YouTube. Local MP4 bytes remain ignored by Git while their digest and route are
-versioned in `storage/projects/media/resources.toml`.
+The media inventory contains the rendered emergence study plus four standalone
+Loci projects and four binder videos delivered by Studio. Scene projects are
+exact locally and on GitHub. Videos are exact locally and have YouTube
+publications. Disabled Drive locations retain the existing backup references.
 
-Future Studio deliveries can enter these inventories with
-`produced_by = "studio"`. Research remains the contributor and storage owner.
+Local MP4 bytes remain ignored by Git while their accepted digests and
+locations are versioned in `storage/projects/media/resources.toml`. Studio
+deliveries use `produced_by = "studio"`; Research remains the contributor and
+storage owner.
+
+The delivered `scene.toml` files are immutable accepted snapshots. Their
+embedded source or master paths record the Studio production context; current
+retrieval locations are defined only by `resources.toml`.

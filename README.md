@@ -27,15 +27,16 @@ K node and hierarchy. The current inventories are:
 
 - `documents`: Markdown files, Markdown bundles, and Jupyter notebooks;
 - `code`: reproducible source projects; and
-- `media`: rendered scientific media.
+- `media`: reproducible scene projects and rendered scientific media.
 
 Every resource declares its protocol, canonical SHA-256, and its own available
 locations. Research owns those bytes and locations. K owns accepted identity,
 topology, protocol, and digest. Tether validates and joins both descriptions.
 
-Studio may produce a resource on Research's behalf. Such a record remains
-owned by `research` and may carry `produced_by = "studio"` as provenance; that
-field does not alter its logical address.
+Studio produces the current K-linked Loci projects and binder videos on
+Research's behalf. Those records remain owned by `research` and carry
+`produced_by = "studio"` as provenance; that field does not alter their
+logical address.
 
 ## Repository shape
 

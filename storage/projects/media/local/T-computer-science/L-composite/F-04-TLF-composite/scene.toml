@@ -1,0 +1,28 @@
+version = 1
+
+[scene]
+id = "42292902-3874-4d54-87ec-0e1b7362af13"
+path = "T-computer-science/L-composite/F-04-TLF-composite"
+format = "loci-project"
+entrypoint = "scenes/scene.py"
+class = "TLFComposite"
+
+[source]
+workspace = "videos/scenes/k_graph/T-computer-science/L-composite/F-04-TLF-composite.py"
+loci_commit = "e25c0b3782b62e4b4d46ead79996b7c60feb56e2"
+loci_plugins_commit = "b1c5c38eaf7d3a633f4c7fa500009b0121f900ac"
+local_dependencies = ["scenes/_voiceover.py"]
+
+[master]
+accepted = "2026-08-20"
+file = "storage/k-graph/videos/local/T-computer-science/L-composite/F-04-TLF-composite.mp4"
+width = 1920
+height = 1080
+fps = 30
+duration_seconds = 64.400000
+video_codec = "h264"
+audio_codec = "aac"
+speech_service = "openai"
+voice = "alloy"
+speech_model = "tts-1-hd"
+sha256 = "e24ad15c57fcb90156b5aaa0b461218bfdf1b587cfa4529cc124bdddad0e1294"
