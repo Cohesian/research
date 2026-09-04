@@ -5,7 +5,7 @@
 
 ## 1. Function as Natural Wrapper
 
-From [F-01-function.md](F-01-function.md), a function may be read as:
+From [E-01-function.md](E-01-function.md), a function may be read as:
 
 $$
 F \approx (\partial F, P_F)
@@ -185,7 +185,7 @@ This is close to a composite / decorator style build-up:
 - the chain is glued at build-up time
 
 The glue is the shared interface plus a packet shape broad enough to cross all stages.
-For structured data packets, that shared shape can be described through a [semantic tree](../L-semantics/F-01-data-semantics.md#data-packets-as-carriers).
+For structured data packets, that shared shape can be described through a [semantic tree](../L-semantics/E-01-data-semantics.md#data-packets-as-carriers).
 
 This often keeps local wrappers smaller, because the path is assembled in build-up time instead of being fully centralized in one large outer function.
 
@@ -283,8 +283,8 @@ It is the call/return geometry that appears when the path is implemented through
 
 This note sits between the structural views:
 
-- [F-01-function.md](F-01-function.md): a function already owns a hidden process
-- [F-03-function-network.md](F-03-function-network.md): pipelines and wrappers as graph structures
+- [E-01-function.md](E-01-function.md): a function already owns a hidden process
+- [E-03-function-network.md](E-03-function-network.md): pipelines and wrappers as graph structures
 
 So:
 

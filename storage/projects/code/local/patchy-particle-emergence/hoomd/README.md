@@ -78,7 +78,7 @@ pixi run video
 ~~~
 
 The study writes ignored trajectories and tables under `outputs/study/` and a
-tracked, executed Research resource under the Emergence TLF path. The
+tracked, executed Research resource under the Emergence TLE path. The
 generated report compares individual seeds and condition mean $\pm$ standard
 deviation, energy evolution, and median-seed peak structures.
 

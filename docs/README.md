@@ -1,7 +1,7 @@
 # Research workspace
 
 Research develops scientific content. A result may be one paper, a notebook,
-a small TLF subgraph, an executable experiment, a video, or a composition of
+a small TLE subgraph, an executable experiment, a video, or a composition of
 several of those resources.
 
 The research process is independent of K. Registration begins only when a

@@ -38,7 +38,7 @@ It does not become a different kind of thing by approaching an input port or lea
 Here `packet` is intentionally abstract.
 It may be a scalar, tuple, record, object, nested document, serialized blob, message, API response, or any other carried value.
 
-When the packet is a data packet carrying structured data, its inner shape can be read through [data semantics](../L-semantics/F-01-data-semantics.md#data-packets-as-carriers).
+When the packet is a data packet carrying structured data, its inner shape can be read through [data semantics](../L-semantics/E-01-data-semantics.md#data-packets-as-carriers).
 The packet is the traveling carrier.
 The semantic tree is the shape of the data being carried.
 
@@ -104,8 +104,8 @@ The important idea is:
 This is why the interface idea matters:
 the same executable concept can describe both leaf forms and composite forms.
 
-Check [F-02-execution.md](F-02-execution.md) for more details.
+Check [E-02-execution.md](E-02-execution.md) for more details.
 
-Network structure is treated separately in [F-03-function-network.md](F-03-function-network.md).
-Natural wrapper implementation is treated separately in [F-04-function-natural-wrappers.md](F-04-function-natural-wrappers.md).
-Generic binder structure is treated separately in [F-01-carbon-binder.md](../L-composite/F-01-carbon-binder.md).
+Network structure is treated separately in [E-03-function-network.md](E-03-function-network.md).
+Natural wrapper implementation is treated separately in [E-04-function-natural-wrappers.md](E-04-function-natural-wrappers.md).
+Generic binder structure is treated separately in [E-01-carbon-binder.md](../L-composite/E-01-carbon-binder.md).

@@ -32,7 +32,7 @@ A v2 record keeps every replica beside the resource it describes:
 ```toml
 [[resource]]
 node_id = "..."
-path = "T-physics/.../F-04-experimental-laboratory"
+path = "T-physics/.../E-04-experimental-laboratory"
 key = "emergence-video"
 protocol = "mp4-file@1"
 sha256 = "..."

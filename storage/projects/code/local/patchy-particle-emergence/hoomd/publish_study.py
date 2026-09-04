@@ -33,10 +33,10 @@ def publish() -> None:
         )
 
     TARGET.mkdir(parents=True, exist_ok=True)
-    assets = TARGET / "F-04-experimental-laboratory"
+    assets = TARGET / "E-04-experimental-laboratory"
     assets.mkdir(parents=True, exist_ok=True)
 
-    copy2(notebook_source, TARGET / "F-04-experimental-laboratory.ipynb")
+    copy2(notebook_source, TARGET / "E-04-experimental-laboratory.ipynb")
     report = ROOT / "outputs" / "study" / "report"
     for name in (
         "condition-comparison.png",

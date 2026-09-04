@@ -3,7 +3,7 @@
 > A phase ruler does not change the base.
 > It changes how finely one coarse exponential jump is inspected.
 
-This note continues [F-01-branching-depth-resolution.md](F-01-branching-depth-resolution.md).
+This note continues [E-01-branching-depth-resolution.md](E-01-branching-depth-resolution.md).
 
 The previous paper introduced the main idea:
 

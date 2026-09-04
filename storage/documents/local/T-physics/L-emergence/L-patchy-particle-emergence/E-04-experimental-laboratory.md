@@ -1,6 +1,6 @@
 # Experimental Laboratory
 
-The executable companion is available in the same TLF node as an `ipynb`
+The executable companion is available in the same TLE node as an `ipynb`
 resource. It loads a controlled HOOMD-blue ensemble consisting of four
 conditions and three seeds per condition.
 
@@ -18,7 +18,7 @@ $$
 
 ## Aggregate structural result
 
-![Seed observations and condition summaries](F-04-experimental-laboratory/condition-comparison.png)
+![Seed observations and condition summaries](E-04-experimental-laboratory/condition-comparison.png)
 
 The mean maximum connected fractions were:
 
@@ -58,7 +58,7 @@ that produced it.
 
 ## Representative structures
 
-![Median-seed peak structures](F-04-experimental-laboratory/peak-structures.png)
+![Median-seed peak structures](E-04-experimental-laboratory/peak-structures.png)
 
 Each panel uses the seed whose run maximum is the median of its condition. The
 frame is that run's maximum connected fraction. Purple edges and outlines mark
@@ -76,7 +76,7 @@ the representative panel because the figure selects the median seed.
 
 ## Energy and thermostat
 
-![Energy comparison](F-04-experimental-laboratory/energy-comparison.png)
+![Energy comparison](E-04-experimental-laboratory/energy-comparison.png)
 
 All four conditions remained close to the target kinetic temperature $0.25$
 over the final quarter of saved frames. Selective conditions had more negative

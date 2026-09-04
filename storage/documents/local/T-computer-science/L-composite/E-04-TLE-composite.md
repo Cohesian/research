@@ -1,15 +1,15 @@
-# TLF Composite
+# TLE Composite
 
-> `TLF` is a labeled composite pattern for a corpus.
+> `TLE` is a labeled composite pattern for a corpus.
 > The grouping edges give the shape.
 > Linear and related edges are overlays on the same fixed nodes.
 
-TLF means **Topic / Lecture / File**.
-It is a composite pattern for distributing knowledge through a filesystem-like structure.
+TLE means **Topic / Lecture / Entry**.
+It is a projection-independent composite pattern for organizing knowledge.
 
-A topic usually groups lectures, and lectures usually group files.
+A topic usually groups lectures, and lectures usually group entries.
 But this is only the common reading, not a strict layer rule.
-The deeper rule is composite: topics and lectures are both grouping nodes, so they may contain many valid mixtures of topics, lectures, and files.
+The deeper rule is composite: topics and lectures are both grouping nodes, so they may contain many valid mixtures of topics, lectures, and entries.
 
 ## 1. Corpus Assignment
 
@@ -32,14 +32,15 @@ $$
 where:
 
 $$
-\kappa : V \to \{T,L,F\}
+\kappa : V \to \{T,L,E,E_d\}
 $$
 
 assigns a node kind:
 
 - `T` = topic
 - `L` = lecture
-- `F` = file
+- `E` = entry
+- `Ed` = draft entry
 
 The edge families are:
 
@@ -80,7 +81,9 @@ V_T = \kappa^{-1}(T)
 \qquad
 V_L = \kappa^{-1}(L)
 \qquad
-V_F = \kappa^{-1}(F)
+V_E = \kappa^{-1}(E)
+\qquad
+V_{E_d} = \kappa^{-1}(E_d)
 $$
 
 Composites are:
@@ -92,27 +95,27 @@ $$
 Leaves are:
 
 $$
-V_F
+V_E \cup V_{E_d}
 $$
 
 So:
 
 - `T` is a composite and may start a scoped view
 - `L` is a composite and expands inside a scoped view
-- `F` is a leaf and carries readable content
+- `E` and `Ed` are leaves with local semantics and may accept external resources
 
 The important distinction is:
 
 $$
 T,L : \text{composite}
 \qquad
-F : \text{leaf}
+E,E_d : \text{leaf}
 $$
 
 not:
 
 $$
-T \to L \to F
+T \to L \to E
 $$
 
 as a required layer chain.
@@ -124,7 +127,7 @@ as a required layer chain.
 Under the grouping axis alone, the recursive grammar is:
 
 $$
-K ::= F \mid c[K_1,\dots,K_n]
+K ::= E \mid E_d \mid c[K_1,\dots,K_n]
 \qquad
 c \in \{T,L\}
 $$
@@ -132,7 +135,9 @@ $$
 Equivalently:
 
 $$
-F : K
+E : K
+\qquad
+E_d : K
 $$
 
 and:
@@ -150,18 +155,18 @@ So both `T` and `L` admit the same child universe:
 $$
 \operatorname{child}(T),\operatorname{child}(L)
 \subseteq
-V_T \cup V_L \cup V_F
+V_T \cup V_L \cup V_E \cup V_{E_d}
 $$
 
 A topic may contain a lecture.
 A lecture may contain a topic.
-Either may contain files.
+Either may contain entries.
 Either may contain its own kind.
 
 That is the composite part:
 
 $$
-c \supset \{F_1,\dots,F_a,L_1,\dots,L_b,T_1,\dots,T_m\}
+c \supset \{E_1,\dots,E_a,L_1,\dots,L_b,T_1,\dots,T_m\}
 $$
 
 with:
@@ -236,43 +241,38 @@ The tree is the current disk-backed realization.
 Linear edges:
 
 $$
-E_l \subseteq V_F \times V_F
+E_l \subseteq V \times V
 $$
 
 Related edges:
 
 $$
-E_r \subseteq V_F \times V_F
+E_r \subseteq V \times V
 $$
 
-Both are leaf-only:
-
-$$
-(u,v) \in E_l \cup E_r
-\quad\Rightarrow\quad
-u,v \in V_F
-$$
+Both are transverse to grouping: Topics, Lectures, Entries, and draft Entries
+may participate without changing structural containment.
 
 They answer different questions.
 
 | Edge | Question | Constraint |
 |------|----------|------------|
 | $E_g$ | Where is this node grouped? | composite to child |
-| $E_l$ | What is the next reading step? | file to file |
-| $E_r$ | What else is related? | file to file |
+| $E_l$ | What is the next reading step? | at most one previous and one next |
+| $E_r$ | What else is related? | directed, optionally weighted |
 
 The linear axis may be a path:
 
 $$
-F_1 \xrightarrow{l} F_2 \xrightarrow{l} F_3
+E_1 \xrightarrow{l} E_2 \xrightarrow{l} E_3
 $$
 
 The related axis may fan out or cycle:
 
 $$
-F_i \xrightarrow{r} F_j
+E_i \xrightarrow{r} E_j
 \qquad
-F_j \xrightarrow{r} F_i
+E_j \xrightarrow{r} E_i
 $$
 
 Neither changes containment:
@@ -309,7 +309,7 @@ Operationally:
 
 - add a related edge: nodes do not move
 - add a next edge: nodes do not move
-- move a file to another folder: nodes move
+- move a entry to another folder: nodes move
 - rename a group path: structural identity changes
 
 So the visual topology is owned by:
@@ -341,13 +341,13 @@ $$
 Linear projection:
 
 $$
-\pi_l(G_{\mathcal{K}}) = (V_F,E_l)
+\pi_l(G_{\mathcal{K}}) = (V,E_l)
 $$
 
 Related projection:
 
 $$
-\pi_r(G_{\mathcal{K}}) = (V_F,E_r)
+\pi_r(G_{\mathcal{K}}) = (V,E_r)
 $$
 
 Full traversal projection:
@@ -355,7 +355,7 @@ Full traversal projection:
 $$
 \pi_{lr}(G_{\mathcal{K}})
 =
-(V_F,E_l \sqcup E_r)
+(V,E_l \sqcup E_r)
 $$
 
 The important invariant is:
@@ -418,7 +418,7 @@ $$
 This is the topic forest:
 
 - it hides `L`
-- it hides `F`
+- it hides `E`
 - it keeps only topic-to-topic adjacency
 - it chooses possible view origins
 
@@ -433,7 +433,7 @@ T_0 \in V_T
 $$
 
 Inside $T_0$, lectures expand.
-Files stop.
+Entries stop.
 Nested topics stop as portals.
 
 Define:
@@ -441,7 +441,7 @@ Define:
 $$
 \operatorname{stop}_{T_0}(x)
 \Longleftrightarrow
-\kappa(x)=F
+\kappa(x)\in\{E,E_d\}
 \;\vee\;
 (\kappa(x)=T \wedge x \neq T_0)
 $$
@@ -493,10 +493,10 @@ until it becomes the new origin.
 
 ## 10. Anchored Reading
 
-For a file:
+For a entry:
 
 $$
-f \in V_F
+f \in V_E
 $$
 
 its anchor topic is the closest topic ancestor:
@@ -516,7 +516,7 @@ $$
 
 as the sidebar structure.
 
-The file is read as a leaf.
+The entry is read as a leaf.
 The local topic view supplies context.
 The linear and related edges supply movement.
 
@@ -529,32 +529,32 @@ A valid grouping shape:
 ```text
 T.math
 |- L.foundations
-|  |- F.axioms
+|  |- E.axioms
 |  |- T.algebra
 |  |  `- L.groups
-|  |     `- F.groups
+|  |     `- E.groups
 |  `- L.proofs
-|     `- F.induction
-`- F.map
+|     `- E.induction
+`- E.map
 ```
 
 Here:
 
 $$
-T.math[L.foundations[\;F.axioms,\;T.algebra[L.groups[F.groups]],\;L.proofs[F.induction]\;],\;F.map]
+T.math[L.foundations[\;E.axioms,\;T.algebra[L.groups[E.groups]],\;L.proofs[E.induction]\;],\;E.map]
 : K
 $$
 
 A linear overlay may be:
 
 $$
-F.axioms \xrightarrow{l} F.induction \xrightarrow{l} F.groups
+E.axioms \xrightarrow{l} E.induction \xrightarrow{l} E.groups
 $$
 
 A related overlay may be:
 
 $$
-F.groups \xrightarrow{r} F.axioms
+E.groups \xrightarrow{r} E.axioms
 $$
 
 The grouping shape does not change.
@@ -565,13 +565,13 @@ Mermaid sketch:
 flowchart TD
     t0((T.math))
     l0((L.foundations))
-    f0((F.axioms))
+    f0((E.axioms))
     t1((T.algebra))
     l1((L.groups))
-    f1((F.groups))
+    f1((E.groups))
     l2((L.proofs))
-    f2((F.induction))
-    f3((F.map))
+    f2((E.induction))
+    f3((E.map))
 
     t0 --> l0
     t0 --> f3
@@ -594,7 +594,7 @@ The dotted edges are $E_l$ and $E_r$.
 
 ## 12. Relation to Type Binder
 
-[F-02-type-binder.md](F-02-type-binder.md) uses:
+[E-02-type-binder.md](E-02-type-binder.md) uses:
 
 $$
 T ::= t \mid d\{T\}
@@ -613,10 +613,10 @@ That pattern has:
 - decorators
 - one binder surface
 
-TLF keeps the binder intuition but removes the decorator axis:
+TLE keeps the binder intuition but removes the decorator axis:
 
 $$
-K ::= F \mid c[K_1,\dots,K_n]
+K ::= E \mid E_d \mid c[K_1,\dots,K_n]
 \qquad
 c \in \{T,L\}
 $$
@@ -629,7 +629,7 @@ G_{\mathcal{K}}
 (V,E_g \sqcup E_l \sqcup E_r,\kappa)
 $$
 
-So TLF is not mainly:
+So TLE is not mainly:
 
 $$
 d\{K\}
@@ -647,7 +647,7 @@ $$
 C \Rightarrow K
 $$
 
-where `K` is the corpus binder and `T/L/F` are admitted node roles.
+where `K` is the corpus binder and `T/L/E/Ed` are admitted node roles.
 
 ---
 
@@ -676,15 +676,15 @@ $$
 ### Leaf law
 
 $$
-F : K
+E,E_d : K
 \qquad
-\operatorname{child}_g(F)=\varnothing
+\operatorname{child}_g(E)=\operatorname{child}_g(E_d)=\varnothing
 $$
 
 ### Traversal law
 
 $$
-E_l,E_r \subseteq V_F \times V_F
+E_l,E_r \subseteq V \times V
 $$
 
 ### Projection law
@@ -734,13 +734,13 @@ This assigns:
 
 ### Pass B: traversal
 
-For each file:
+For each entry:
 
 $$
-F_i \longmapsto
-\{(F_i,F_j)\in E_l\}
+E_i \longmapsto
+\{(E_i,E_j)\in E_l\}
 \cup
-\{(F_i,F_k)\in E_r\}
+\{(E_i,E_k)\in E_r\}
 $$
 
 from local metadata and body links.
@@ -757,7 +757,7 @@ and render only that projection.
 
 The corpus does not need a second source of truth.
 The filesystem gives $E_g$.
-The files give $E_l$ and $E_r$.
+The entries give $E_l$ and $E_r$.
 
 ---
 
@@ -785,14 +785,14 @@ and:
 
 $$
 \boxed{
-K ::= F \mid c[K_1,\dots,K_n],
+K ::= E \mid E_d \mid c[K_1,\dots,K_n],
 \quad c\in\{T,L\}
 }
 $$
 
 So:
 
-- `T/L/F` define roles
+- `T/L/E/Ed` define roles
 - $E_g$ defines topology
 - $E_l$ defines reading sequence
 - $E_r$ defines non-linear relation

@@ -19,7 +19,7 @@ canonical contracts in [`../k-graph/`](../k-graph/).
 | Contributor package | [`contributor.toml`](contributor.toml) |
 | Resource contract v2 | [`../k-graph/docs/RESOURCE-CONTRACT-V2.md`](../k-graph/docs/RESOURCE-CONTRACT-V2.md) |
 | Tether protocol v2 | [`../tether/docs/CONTRIBUTOR-PROTOCOL-V2.md`](../tether/docs/CONTRIBUTOR-PROTOCOL-V2.md) |
-| Canonical TLF | [`../k-graph/docs/TLF.md`](../k-graph/docs/TLF.md) |
+| Canonical TLE | [`../k-graph/docs/TLE.md`](../k-graph/docs/TLE.md) |
 
 ## Working model
 

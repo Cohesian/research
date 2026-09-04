@@ -304,7 +304,7 @@ flowchart TD
 
 ## 7. Connection
 
-This note is a specialization of [F-01-carbon-binder.md](F-01-carbon-binder.md):
+This note is a specialization of [E-01-carbon-binder.md](E-01-carbon-binder.md):
 
 $$
 C \Rightarrow T
