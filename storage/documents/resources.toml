@@ -336,7 +336,7 @@ node_id = "6281d965-093e-4aaa-9ce0-2f67b95c8bbc"
 path = "T-physics/L-emergence/L-patchy-particle-emergence/E-04-experimental-laboratory"
 key = "ipynb"
 protocol = "jupyter-notebook-file@1"
-sha256 = "4841ed646c62b810cdb99d21975ac4e86c928f290e8c5a5b4896c3ebded98f73"
+sha256 = "0a870281e08909b4552c16b106f34425e78e203a3d53c7483a088f0a830760de"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-04-experimental-laboratory.ipynb" },
   { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-04-experimental-laboratory.ipynb" },

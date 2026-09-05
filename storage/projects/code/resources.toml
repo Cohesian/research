@@ -7,7 +7,7 @@ node_id = "6281d965-093e-4aaa-9ce0-2f67b95c8bbc"
 path = "T-physics/L-emergence/L-patchy-particle-emergence/E-04-experimental-laboratory"
 key = "hoomd"
 protocol = "python-project@1"
-sha256 = "f7ef30799af1e54a95321be16f8a9e5c172adf6980c29a953951e6be7a65141c"
+sha256 = "5fd40cb007b1871ac83dcb06bf2e8327247550996841b7189939cef6aa3c1237"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/code/local/patchy-particle-emergence/hoomd" },
   { store = "github", relation = "exact", uri = "https://github.com/Cohesian/research/tree/main/storage/projects/code/local/patchy-particle-emergence/hoomd" },

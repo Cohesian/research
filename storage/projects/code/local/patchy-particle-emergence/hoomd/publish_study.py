@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 from pathlib import Path
 from shutil import copy2
 
@@ -22,6 +23,46 @@ TARGET = (
     / "L-patchy-particle-emergence"
 )
 
+REPORT_FIGURES = (
+    "condition-comparison.png",
+    "energy-comparison.png",
+    "peak-structures.png",
+)
+
+
+def refresh_report_figures(notebook: nbformat.NotebookNode, report: Path) -> None:
+    """Replace saved notebook figures with the current report images."""
+
+    for name in REPORT_FIGURES:
+        source = report / name
+        if not source.is_file():
+            raise FileNotFoundError(f"Missing generated report figure: {source}")
+
+        matching_cells = [
+            cell
+            for cell in notebook.cells
+            if cell.cell_type == "code" and name in "".join(cell.source)
+        ]
+        if len(matching_cells) != 1:
+            raise RuntimeError(
+                f"Expected one notebook cell for {name}, found {len(matching_cells)}"
+            )
+
+        image_outputs = [
+            output
+            for output in matching_cells[0].outputs
+            if output.output_type in {"display_data", "execute_result"}
+            and "image/png" in output.get("data", {})
+        ]
+        if len(image_outputs) != 1:
+            raise RuntimeError(
+                f"Expected one saved PNG output for {name}, found {len(image_outputs)}"
+            )
+
+        image_outputs[0].data["image/png"] = base64.b64encode(
+            source.read_bytes()
+        ).decode("ascii")
+
 
 def publish() -> None:
     notebook_source = ROOT / "notebooks" / "02-controlled-emergence-study.ipynb"
@@ -36,16 +77,12 @@ def publish() -> None:
     assets = TARGET / "E-04-experimental-laboratory"
     assets.mkdir(parents=True, exist_ok=True)
 
-    copy2(notebook_source, TARGET / "E-04-experimental-laboratory.ipynb")
     report = ROOT / "outputs" / "study" / "report"
-    for name in (
-        "condition-comparison.png",
-        "energy-comparison.png",
-        "peak-structures.png",
-    ):
+    refresh_report_figures(notebook, report)
+    nbformat.write(notebook, TARGET / "E-04-experimental-laboratory.ipynb")
+
+    for name in REPORT_FIGURES:
         source = report / name
-        if not source.is_file():
-            raise FileNotFoundError(f"Missing generated report figure: {source}")
         copy2(source, assets / name)
 
     print(TARGET)
