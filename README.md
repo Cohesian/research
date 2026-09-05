@@ -55,9 +55,9 @@ research/
 └── AGENTS.md
 ```
 
-The older `routes.toml` files remain as transition references for protocol v1.
-`contributor.toml` and the three `resources.toml` inventories are the active v2
-package.
+`contributor.toml` and the three `resources.toml` inventories form the complete
+contributor package. Each resource keeps all of its active locations in its own
+inventory record; there are no parallel route or companion maps.
 
 ## Validation
 

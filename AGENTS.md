@@ -36,7 +36,7 @@ and a local resource key to one versioned protocol and canonical SHA-256. Its
 `locations` list describes the exact replicas or publications Research
 currently exposes.
 
-Use `markdown-bundle@1` when a Markdown entrypoint has a same-stem companion
+Use `markdown-bundle@1` when a Markdown entrypoint has a same-stem asset
 directory. Use `markdown-file@1` when the Markdown file is the complete
 resource. Notebooks, MP4 files, and Python projects use their corresponding
 protocols from Tether's registry.

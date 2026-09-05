@@ -23,7 +23,6 @@ produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-01-carbon-binder" },
   { store = "github", relation = "exact", uri = "https://github.com/Cohesian/research/tree/main/storage/projects/media/local/T-computer-science/L-composite/E-01-carbon-binder" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/drive/folders/1ALzk6qlsF1to7JMQadDqMbBCl9i8EiE9?usp=sharing" },
 ]
 
 [[resource]]
@@ -35,7 +34,6 @@ sha256 = "71a89456adec6f26dda3282f93382076de615e36e276f53ed169d74e28d8ddb0"
 produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-01-carbon-binder.mp4" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/file/d/1bvHJwt1rTUhPbna8SmKjrp6bugSgXwZQ/view?usp=sharing" },
   { store = "youtube", relation = "publication", uri = "https://youtu.be/sFzPj5Onges" },
 ]
 
@@ -49,7 +47,6 @@ produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-02-type-binder" },
   { store = "github", relation = "exact", uri = "https://github.com/Cohesian/research/tree/main/storage/projects/media/local/T-computer-science/L-composite/E-02-type-binder" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/drive/folders/1It60DnYmP-TW8emxutg38dtHDRh-DegQ?usp=sharing" },
 ]
 
 [[resource]]
@@ -61,7 +58,6 @@ sha256 = "286fc32045a34e29b4982f916f234232ee90ef9607d291d6836df45a221e20d1"
 produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-02-type-binder.mp4" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/file/d/1qawvazws5StNh1bQH5fZddrk0qhx_33N/view?usp=sharing" },
   { store = "youtube", relation = "publication", uri = "https://youtu.be/fCd4yvl-nko" },
 ]
 
@@ -75,7 +71,6 @@ produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-03-query-binder" },
   { store = "github", relation = "exact", uri = "https://github.com/Cohesian/research/tree/main/storage/projects/media/local/T-computer-science/L-composite/E-03-query-binder" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/drive/folders/1CHuH0vcGIxkuo8e0fdQus0BAFfy_VLDS?usp=sharing" },
 ]
 
 [[resource]]
@@ -87,7 +82,6 @@ sha256 = "a4f76cac042ea194965181e08b4943f96d0338106c19964c6ebb714d6eda7bbb"
 produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-03-query-binder.mp4" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/file/d/1EQsbB-egXz5KQcpOsBZYWm6bqfMYo1aW/view?usp=sharing" },
   { store = "youtube", relation = "publication", uri = "https://youtu.be/RSVaNvwJZZQ" },
 ]
 
@@ -101,7 +95,6 @@ produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-04-TLE-composite" },
   { store = "github", relation = "exact", uri = "https://github.com/Cohesian/research/tree/main/storage/projects/media/local/T-computer-science/L-composite/E-04-TLE-composite" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/drive/folders/1D1nKP3MeZ3vLdh6BZJjN04tmsh8lxrWB?usp=sharing" },
 ]
 
 [[resource]]
@@ -113,6 +106,5 @@ sha256 = "e24ad15c57fcb90156b5aaa0b461218bfdf1b587cfa4529cc124bdddad0e1294"
 produced_by = "studio"
 locations = [
   { store = "local", relation = "exact", location = "storage/projects/media/local/T-computer-science/L-composite/E-04-TLE-composite.mp4" },
-  { store = "google-drive", relation = "exact", uri = "https://drive.google.com/file/d/1Cjm5t7eeMVWM_lpzvbQKPMBUsWUgubvC/view?usp=sharing" },
   { store = "youtube", relation = "publication", uri = "https://youtu.be/Y2W587bCH4w" },
 ]

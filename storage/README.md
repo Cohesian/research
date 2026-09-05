@@ -7,9 +7,7 @@ resources. Protocol v2 keeps one flat inventory for each semantic hierarchy:
 storage/
 ├── documents/
 │   ├── resources.toml
-│   ├── local/
-│   ├── google-drive/
-│   └── github/
+│   └── local/
 └── projects/
     ├── code/
     │   ├── resources.toml
@@ -49,13 +47,15 @@ but it does not claim byte equality.
 ## Documents
 
 Most Markdown entries use `markdown-file@1`. The Experimental Laboratory uses
-`markdown-bundle@1`: its `.md` entrypoint and same-stem image directory form
-one canonical resource. Its local location is exact. GitHub file URLs are
-declared for single-file documents and notebooks; a multi-file GitHub transfer
-adapter can later expose the bundle as a remote exact location.
+`markdown-bundle@1`: its `.md` entrypoint and same-stem image directory are one
+logical resource. Tether
+materializes that bundle canonically as `document.md` beside `assets/`.
 
-Google Drive remains a disabled backup store. Its v1 route map is retained as
-transition data but is not part of the active v2 inventory.
+Its local location is exact. GitHub file URLs are declared for single-file
+documents and notebooks; a multi-file GitHub transfer adapter can later expose
+the bundle as a remote exact location. Until then, the bundle deliberately has
+no GitHub location. Research currently supports local and GitHub storage, plus
+YouTube publications for videos.
 
 ## Code and media
 
@@ -66,7 +66,7 @@ runtime outputs are outside the canonical project boundary; `pixi.toml` and
 The media inventory contains the rendered emergence study plus four standalone
 Loci projects and four binder videos delivered by Studio. Scene projects are
 exact locally and on GitHub. Videos are exact locally and have YouTube
-publications. Disabled Drive locations retain the existing backup references.
+publications.
 
 Local MP4 bytes remain ignored by Git while their accepted digests and
 locations are versioned in `storage/projects/media/resources.toml`. Studio

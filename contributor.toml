@@ -12,10 +12,6 @@ origin = "."
 kind = "remote"
 enabled = true
 
-[stores.google-drive]
-kind = "remote"
-enabled = false
-
 [stores.youtube]
 kind = "publication"
 enabled = true
