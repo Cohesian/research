@@ -260,7 +260,7 @@ node_id = "edba87bc-3359-4ea1-bfb7-7bb5d4762963"
 path = "T-math/T-linear-algebra/T-vectors/L-basis/E-01-introduction"
 key = "md"
 protocol = "markdown-file@1"
-sha256 = "63e9592b7d4a6d723647c6071bcdac5553232e1e31e4a8dd73df68a12d35a5c3"
+sha256 = "2931a4938101986597be63d106485d3821ea4187e24848e6742f0adc6f1d31da"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-01-introduction.md" },
   { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-01-introduction.md" },
@@ -271,7 +271,7 @@ node_id = "07ff1a0b-e84f-40bb-996f-467a03d2bf3c"
 path = "T-math/T-linear-algebra/T-vectors/L-reflection/E-01-introduction"
 key = "md"
 protocol = "markdown-file@1"
-sha256 = "63e9592b7d4a6d723647c6071bcdac5553232e1e31e4a8dd73df68a12d35a5c3"
+sha256 = "b5e26976328961842f4c52618ccc7851c049860311d2b46046b6933462d89109"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-01-introduction.md" },
   { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-01-introduction.md" },
@@ -351,4 +351,323 @@ sha256 = "4fe07d68bc33fae4d5458eb1a06928ab4ce52962361d6c968cdda5b5dd6cfb38"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-05-findings-and-limitations.md" },
   { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-05-findings-and-limitations.md" },
+]
+
+[[resource]]
+node_id = "3ea2de18-a6b8-4405-a6cc-bdd0a7c60c79"
+path = "T-math/L-division/E-02-partitive-division"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "f5f3a7b384651843e9843b9db06bc79acb6828e42a68942ecdd7ff60b60590bb"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-02-partitive-division.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-02-partitive-division.md" },
+]
+
+[[resource]]
+node_id = "6b3348d3-725d-4e9b-bb3e-3fe21f810661"
+path = "T-math/L-division/E-03-quotative-division"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "008c14506b290d9fc5284833b281082d5d081c45056487e617b2472a22557b6c"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-03-quotative-division.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-03-quotative-division.md" },
+]
+
+[[resource]]
+node_id = "edd9880d-7aa9-4d32-a10d-4e71f04dd23b"
+path = "T-math/L-division/E-04-when-the-dividend-is-smaller"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "4d6d2972b1de877a4566fc164867bf9f400bf99bd322ff18ac4090a130f7dc78"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-04-when-the-dividend-is-smaller.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-04-when-the-dividend-is-smaller.md" },
+]
+
+[[resource]]
+node_id = "78460d28-94cd-4367-b8aa-8b2ea49d9330"
+path = "T-math/L-division/E-05-visual-laboratory"
+key = "ipynb"
+protocol = "jupyter-notebook-file@1"
+sha256 = "7e6fb7d519acc0b558a2c807bb43db824ab314ea15575cec8b5732a06437e2ff"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-05-visual-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-05-visual-laboratory.ipynb" },
+]
+
+[[resource]]
+node_id = "f0746209-7089-4416-b5da-74642bfe6d60"
+path = "T-math/T-calculus/L-local-change-and-accumulation/E-01-finite-change"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "c5d382caa83fc81744905f45fa85bfebf2a1d77d8a90a84c18a8f6d15c16e10c"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-01-finite-change.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-01-finite-change.md" },
+]
+
+[[resource]]
+node_id = "6d84a9ff-6e0e-4518-ac3a-d0f14f468c06"
+path = "T-math/T-calculus/L-local-change-and-accumulation/E-02-the-derivative"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "27eaa4220ea2cf0cf169ec721ae1b82e72ed6f815896194f02308bef1ccdf906"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-02-the-derivative.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-02-the-derivative.md" },
+]
+
+[[resource]]
+node_id = "a9ed522c-be35-4482-b0fd-35642aa57e56"
+path = "T-math/T-calculus/L-local-change-and-accumulation/E-03-a-field-of-local-rules"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "aa646ca3e4ecbb00b740da3d74bb3b1e25d2fdffbf23d0ff17a9d7107690757b"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-03-a-field-of-local-rules.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-03-a-field-of-local-rules.md" },
+]
+
+[[resource]]
+node_id = "28236311-355e-4bda-a31f-bb1075c94051"
+path = "T-math/T-calculus/L-local-change-and-accumulation/E-04-reconstruction-by-integration"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "28377abb2eb871589ce5efe4427ad7afb36d333f65458cffddef1fcbf6fd7cf9"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-04-reconstruction-by-integration.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-04-reconstruction-by-integration.md" },
+]
+
+[[resource]]
+node_id = "20e6f052-b647-4db7-b183-f6cdd49f67f8"
+path = "T-math/T-calculus/L-local-change-and-accumulation/E-05-visual-laboratory"
+key = "ipynb"
+protocol = "jupyter-notebook-file@1"
+sha256 = "edfa41111f40ebb0b8a9fe65d5f20424d1bb92984d4f5a486dddbb7b6f91f36d"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-05-visual-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-05-visual-laboratory.ipynb" },
+]
+
+[[resource]]
+node_id = "f379e3eb-b603-4d86-829d-aafe5f5466ff"
+path = "T-math/T-linear-algebra/L-foundations/E-01-scalars-and-fields"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "0167d9610172cda7453b99f130dcdbc44a4795448d0601163e64fcddbd45544f"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-foundations/E-01-scalars-and-fields.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-01-scalars-and-fields.md" },
+]
+
+[[resource]]
+node_id = "34255a7e-13f8-462e-a1b8-fee604de8893"
+path = "T-math/T-linear-algebra/L-foundations/E-02-vector-spaces"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "f38217c929a9d37bb506f39a982df08ad511b90b71d473af1c3902e5b89a1b8d"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-foundations/E-02-vector-spaces.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-02-vector-spaces.md" },
+]
+
+[[resource]]
+node_id = "598dd717-aaa4-42ed-bbb1-6ca7e1075209"
+path = "T-math/T-linear-algebra/L-foundations/E-03-linear-combinations"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "5d09a1ff0da266265109b6eadccf0edc1bd7eae40282c1ef8badceec13a8aa1c"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-foundations/E-03-linear-combinations.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-03-linear-combinations.md" },
+]
+
+[[resource]]
+node_id = "13ac5aa2-9e33-4875-a3b9-5f1a86f9171b"
+path = "T-math/T-linear-algebra/T-vectors/L-vector-operations/E-01-addition-and-subtraction"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "8cc4e7e658ecc22e9d348aa0be303d73aa381fd8c3e6306f90fc7226e1eb763e"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-01-addition-and-subtraction.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-01-addition-and-subtraction.md" },
+]
+
+[[resource]]
+node_id = "183d90f0-8306-4b96-adef-88c2bc842d07"
+path = "T-math/T-linear-algebra/T-vectors/L-vector-operations/E-02-scalar-multiplication"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "91485f957263aef5695723d3fe0935d94eb6ec258e4a6b7df0eb00a45e7be356"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-02-scalar-multiplication.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-02-scalar-multiplication.md" },
+]
+
+[[resource]]
+node_id = "b5dfbb83-1557-4359-8a96-8a5b05d98d23"
+path = "T-math/T-linear-algebra/T-vectors/L-vector-operations/E-03-magnitude-direction-and-dot-product"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "c6fda9774f9b59caf651d687175e0afd8375ff00a88728f09a1e0450cdaf5aa1"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-03-magnitude-direction-and-dot-product.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-03-magnitude-direction-and-dot-product.md" },
+]
+
+[[resource]]
+node_id = "0fc19d85-98e6-4def-a55a-121ce4a43140"
+path = "T-math/T-linear-algebra/T-vectors/L-vector-operations/E-04-vector-laboratory"
+key = "ipynb"
+protocol = "jupyter-notebook-file@1"
+sha256 = "bd5f9fd3ce04d923632d3bf0199959f8469a7ba509cbc6725a2063cfae0f34ef"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-04-vector-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-04-vector-laboratory.ipynb" },
+]
+
+[[resource]]
+node_id = "b43ad2ae-5d94-41f8-9c15-2bc47044cdeb"
+path = "T-math/T-linear-algebra/T-vectors/L-basis/E-02-basis-laboratory"
+key = "ipynb"
+protocol = "jupyter-notebook-file@1"
+sha256 = "da8afb52413e509405a7e33c8a4329d1f84d0bffdd09471c511b9ad9fcb3b3fc"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-02-basis-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-02-basis-laboratory.ipynb" },
+]
+
+[[resource]]
+node_id = "d7056ff7-6fd2-46c7-aa19-783694a41739"
+path = "T-math/T-linear-algebra/T-vectors/L-reflection/E-02-constructing-the-matrix"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "f97493b1266de2465635731b2d18e0fdd3bf844a13fb7b1237c1a5a5a0662860"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-02-constructing-the-matrix.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-02-constructing-the-matrix.md" },
+]
+
+[[resource]]
+node_id = "5387742c-e801-4f99-92a1-3ebdb67235d3"
+path = "T-math/T-linear-algebra/T-vectors/L-reflection/E-03-eigendirections-and-invariants"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "f429d97381cded0405633ab83f3a6e9c3317fae3c026f97c93ccdf78b5febad9"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-03-eigendirections-and-invariants.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-03-eigendirections-and-invariants.md" },
+]
+
+[[resource]]
+node_id = "3cfa86df-e1aa-4b78-9b77-6925a72eff67"
+path = "T-math/T-linear-algebra/T-vectors/L-reflection/E-04-reflection-laboratory"
+key = "ipynb"
+protocol = "jupyter-notebook-file@1"
+sha256 = "c6392f08271ce0731d07bec88b98ccccad9817926dfaa04a40908ede68ef9f15"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-04-reflection-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-04-reflection-laboratory.ipynb" },
+]
+
+[[resource]]
+node_id = "09562bd6-0337-4d1b-94ec-1d6b43694841"
+path = "T-math/T-linear-algebra/L-linear-transformations/E-01-transforming-a-basis"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "8144aeb4e5d5ff52a3d4941748137a518549e822bf177672240f6453431bdd58"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-01-transforming-a-basis.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-01-transforming-a-basis.md" },
+]
+
+[[resource]]
+node_id = "72f5419c-8895-4d86-abbf-40374e67a3e8"
+path = "T-math/T-linear-algebra/L-linear-transformations/E-02-matrices-as-linear-maps"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "42ccfa7eab28edeb48a20a014d41086268b07aaaed6cee292adf708da5d0a7e1"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-02-matrices-as-linear-maps.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-02-matrices-as-linear-maps.md" },
+]
+
+[[resource]]
+node_id = "89b5e274-1438-45b7-a799-998d4fab0dfd"
+path = "T-math/T-linear-algebra/L-linear-transformations/E-03-two-views-of-matrix-multiplication"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "5a695ba41228d87e03fd5c6a316027b8881429a31302c8d04360596747191137"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-03-two-views-of-matrix-multiplication.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-03-two-views-of-matrix-multiplication.md" },
+]
+
+[[resource]]
+node_id = "9f55051c-9669-4a78-92b4-9e20b885c1bd"
+path = "T-math/T-linear-algebra/L-linear-transformations/E-04-image-kernel-and-rank"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "04848c494f01ac256c2ec6abe67de0c8b9dee6e66eb739a157a365defad9ef8a"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-04-image-kernel-and-rank.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-04-image-kernel-and-rank.md" },
+]
+
+[[resource]]
+node_id = "99a067c0-f590-4e61-9390-88170fbb4fb6"
+path = "T-math/T-linear-algebra/L-linear-transformations/E-05-transformation-laboratory"
+key = "ipynb"
+protocol = "jupyter-notebook-file@1"
+sha256 = "07291719916b5cc9d84d97a100b92c4f27772121ee90a671302db48dec233437"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-05-transformation-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-05-transformation-laboratory.ipynb" },
+]
+
+[[resource]]
+node_id = "63ed346b-8aa1-418d-8b92-6f10e5d74dc6"
+path = "T-math/T-linear-algebra/L-tensors/E-01-from-linear-to-multilinear"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "abc54daf57ee8d5c5f980f538c76140c29b5497044a34132af8c35672f58ba91"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-01-from-linear-to-multilinear.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-01-from-linear-to-multilinear.md" },
+]
+
+[[resource]]
+node_id = "77ce02d1-567f-4704-b099-76d1391b80e4"
+path = "T-math/T-linear-algebra/L-tensors/E-02-components-order-and-shape"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "8aea48dcac0dbf624454c1e4173ab11c60c8242d75c422169043dbe3281523b8"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-02-components-order-and-shape.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-02-components-order-and-shape.md" },
+]
+
+[[resource]]
+node_id = "b04ed194-a816-42e5-b950-ab46846cbf41"
+path = "T-math/T-linear-algebra/L-tensors/E-03-basis-independent-objects"
+key = "md"
+protocol = "markdown-file@1"
+sha256 = "499d73f73590578e47dda2389264fb582dfc3421358f89f8c4abad801fc6725c"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-03-basis-independent-objects.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-03-basis-independent-objects.md" },
+]
+
+[[resource]]
+node_id = "64d860f7-3329-4311-96a5-67a5da67a5c0"
+path = "T-math/T-linear-algebra/L-tensors/E-04-tensor-laboratory"
+key = "ipynb"
+protocol = "jupyter-notebook-file@1"
+sha256 = "2f005f0ca8825ab4bf500f7d14c9295f5a9fe086bfc8458bdd00b5e2bc91e0d1"
+locations = [
+  { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-04-tensor-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-04-tensor-laboratory.ipynb" },
 ]

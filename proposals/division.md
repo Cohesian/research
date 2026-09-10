@@ -22,7 +22,12 @@ The existing lecture and introduction retain their current canonical identifiers
 - `L-division`: `2c3cfe88-3010-4730-87b9-31138b863178`
 - `E-01-introduction`: `ff647a5d-44f0-42af-9f01-abcadd04fb37`
 
-K-graph should assign identifiers to `E-02` through `E-05` during acceptance.
+K-graph assigned the remaining identifiers during acceptance:
+
+- `E-02-partitive-division`: `3ea2de18-a6b8-4405-a6cc-bdd0a7c60c79`
+- `E-03-quotative-division`: `6b3348d3-725d-4e9b-bb3e-3fe21f810661`
+- `E-04-when-the-dividend-is-smaller`: `edd9880d-7aa9-4d32-a10d-4e71f04dd23b`
+- `E-05-visual-laboratory`: `78460d28-94cd-4367-b8aa-8b2ea49d9330`
 
 ## Proposed grouping edges
 

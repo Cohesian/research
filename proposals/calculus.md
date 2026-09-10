@@ -24,7 +24,15 @@ T-calculus
     └── E-05-visual-laboratory
 ```
 
-All nodes in this proposal are new. K-graph should assign their canonical identifiers during acceptance.
+K-graph assigned the canonical identifiers during acceptance:
+
+- `T-calculus`: `0cd0280a-5814-47d5-8254-5a0206c0873f`
+- `L-local-change-and-accumulation`: `2fbd353f-e9ee-4b3f-93ef-9d85ca132330`
+- `E-01-finite-change`: `f0746209-7089-4416-b5da-74642bfe6d60`
+- `E-02-the-derivative`: `6d84a9ff-6e0e-4518-ac3a-d0f14f468c06`
+- `E-03-a-field-of-local-rules`: `a9ed522c-be35-4482-b0fd-35642aa57e56`
+- `E-04-reconstruction-by-integration`: `28236311-355e-4bda-a31f-bb1075c94051`
+- `E-05-visual-laboratory`: `20e6f052-b647-4db7-b183-f6cdd49f67f8`
 
 ## Proposed grouping edges
 
